@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>任務管理系統 - TaskManager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>任務清單</h1>
+            <p class="subtitle">管理您的每一天，讓生活更有效率。</p>
+        </header>
+
+        <section class="input-section">
+            <input type="text" id="task-input" placeholder="新增待辦事項..." autocomplete="off">
+            <button id="add-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+            </button>
+        </section>
+
+        <section class="filters">
+            <button class="filter-btn active" data-filter="all">全部</button>
+            <button class="filter-btn" data-filter="active">進行中</button>
+            <button class="filter-btn" data-filter="completed">已完成</button>
+        </section>
+
+        <section class="tasks-section">
+            <ul id="task-list">
+                <!-- 任務項目將透過 JavaScript 動態生成 -->
+            </ul>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
